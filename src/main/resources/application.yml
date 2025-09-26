@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5435/qr_redirect_db
+
+  flyway:
+    user: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5435/qr_redirect_db
