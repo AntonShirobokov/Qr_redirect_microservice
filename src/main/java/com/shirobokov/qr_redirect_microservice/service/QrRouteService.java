@@ -24,11 +24,15 @@ public class QrRouteService {
     }
 
 
-    public QrRoute getQrRouteById(UUID uuid) {
-        Optional<QrRoute> qrRoute = qrRouteRepository.findQrRoutesByQrCodeId(uuid);
+    public QrRoute getQrRouteById(UUID qrCodeId) {
+        Optional<QrRoute> qrRoute = qrRouteRepository.findQrRoutesByQrCodeId(qrCodeId);
         if (qrRoute.isEmpty()) {
             throw new QrRouteNotFound("QrCode с таким id не найден");
         }
         return qrRoute.get();
+    }
+
+    public boolean deleteQrRoute(UUID qrCodeId) {
+        return qrRouteRepository.deleteByQrCodeId(qrCodeId) > 0;
     }
 }
