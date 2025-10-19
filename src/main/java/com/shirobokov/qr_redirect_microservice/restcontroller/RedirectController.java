@@ -23,8 +23,8 @@ public class RedirectController {
     private final QrRouteService qrRouteService;
 
     @GetMapping("/{uuid}")
-    public ResponseEntity<?> redirect(@PathVariable("uuid")UUID qrUuid) {
-        QrRoute qrRoute = qrRouteService.getQrRouteById(qrUuid);
+    public ResponseEntity<?> redirect(@PathVariable("uuid")UUID qrCodeId) {
+        QrRoute qrRoute = qrRouteService.getQrRouteById(qrCodeId);
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setLocation(URI.create(qrRoute.getRedirectUrl()));
         return new ResponseEntity<>(httpHeaders, HttpStatus.MOVED_PERMANENTLY);

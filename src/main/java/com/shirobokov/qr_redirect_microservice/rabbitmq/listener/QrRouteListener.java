@@ -34,6 +34,6 @@ public class QrRouteListener {
 
         boolean result = qrRouteService.deleteQrRoute(qrCodeId);
 
-        log.info(result ? "QR-код с id {} был удалён" : "Ничего не удалено (id: {})", qrCodeId);
+        log.info(result ? "QR-код с id {} был удалён из БД" : "Ничего не удалено из БД (id: {})", qrCodeId);
     }
 }
