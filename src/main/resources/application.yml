@@ -2,12 +2,18 @@ spring:
   datasource:
     username: postgres
     password: postgres
+    # Для запуска через ide
     url: jdbc:postgresql://localhost:5435/qr_redirect_db
+    # Для запуска через docker-compose
+    #url: jdbc:postgresql://qr_redirect_microservice_db:5432/qr_redirect_db
 
   flyway:
     user: postgres
     password: postgres
+    # Для запуска через ide
     url: jdbc:postgresql://localhost:5435/qr_redirect_db
+    # Для запуска через docker-compose
+    #url: jdbc:postgresql://qr_redirect_microservice_db:5432/qr_redirect_db
   rabbitmq:
     host: localhost
     port: 5672

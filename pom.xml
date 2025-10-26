@@ -10,10 +10,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.shirobokov</groupId>
-    <artifactId>QR_redirect_microservice</artifactId>
+    <artifactId>Qr_redirect_microservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>QR_redirect_microservice</name>
-    <description>QR_redirect_microservice</description>
+    <name>Qr_redirect_microservice</name>
+    <description>Qr_redirect_microservice</description>
     <url/>
     <licenses>
         <license/>
@@ -70,6 +70,7 @@
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-database-postgresql</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
