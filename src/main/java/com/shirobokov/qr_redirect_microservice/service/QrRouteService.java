@@ -53,4 +53,20 @@ public class QrRouteService {
 
         return qrRouteRepository.deleteByQrCodeId(qrCodeId) > 0;
     }
+
+    public void updateQrRoute(UUID qrCodeId, String redirectUrl) {
+        Optional<QrRoute> qrRouteOptional = qrRouteRepository.findQrRoutesByQrCodeId(qrCodeId);
+
+        if (qrRouteOptional.isEmpty()) {
+            throw new QrRouteNotFound("QrCode с таким id не найден");
+        }
+        QrRoute qrRoute = qrRouteOptional.get();
+
+        qrRoute.setRedirectUrl(redirectUrl);
+
+        qrRouteRepository.save(qrRoute);
+
+        log.info("{} Новое значение redirect_url для qr кода с id {}: {}", this.getClass().getName(), qrCodeId, redirectUrl);
+    }
+
 }

@@ -10,7 +10,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class ScanEvent {
     private UUID qrCodeId;
-    private String ip;
+    private String ipAddress;
     private String client;
     private LocalDateTime scanAt;
 }
